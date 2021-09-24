@@ -1,0 +1,98 @@
+<div class="container">
+  <h1 class="title">TEMPLATE: Dinamicos.</h1>
+  <div class="separator"></div>
+
+  <form #dinamicForm=ngForm
+        (ngSubmit)="saveForm()"
+        autocomplete="off">
+
+    <!-- Name  -->
+    <div class="input">
+      <label  class="input__label"
+              for="name">
+            Name:
+      </label>
+
+
+      <input  type="text"
+              class="input__input"
+              id ="name"
+              name="name"
+              [(ngModel)]="person.name"
+              required
+              placeholder="Name*">
+
+      <span class="alert"
+            *ngIf="nameValidator()">
+        this field is required
+      </span>
+    </div>
+
+
+    <!-- add  -->
+    <div class="input">
+      <label  class="input__label"
+              for="add">
+            Favorites:
+      </label>
+
+      <div class="form__group">
+        <input  type="text"
+                class="input__input"
+                id ="add"
+                placeholder="add a new game"
+                name="newGame"
+                [(ngModel)]="newGame"
+                (keyup.enter)="addFavorite()">
+        <button (click)="addFavorite()">
+          Add
+        </button>    
+      </div>
+
+      <span class="alert">
+      </span>
+
+    </div>
+
+    <!-- Games List  -->
+    <div class="input">
+
+      <label  class="input__label">
+              Favorites:
+      </label>
+
+      <div class="inputs__list">
+
+        <div class="form__group mb-1 "
+            *ngFor="let favorite of person.favorites;
+            let i = index">
+
+          <input  type="text"
+                class="input__input"
+                [(ngModel)]="favorite.name"
+                name="favorite_{{ i }}"
+                >
+          <button (click)="deleteItem( i )">X</button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <button type="submit"
+            class="form__button"
+            [disabled]="dinamicForm.invalid">
+        Guardar
+    </button>
+  </form>
+
+  <div>
+    <span>Person data</span>
+    <pre>
+      {{person | json}}
+    </pre>
+  </div>
+
+</div>
+

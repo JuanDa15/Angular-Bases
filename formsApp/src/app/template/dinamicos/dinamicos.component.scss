@@ -1,0 +1,57 @@
+@import '../../../styles.scss';
+
+.container{
+  padding: .3rem;
+}
+
+.title{
+  margin: 0;
+  padding: 1.2rem .6rem 0 .6rem;
+}
+
+.separator{
+  width: 91%;
+  margin: 0 .6rem;
+  margin-bottom: 1rem;
+}
+
+form{
+  width: 90%;
+}
+
+.input{
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto 20px;
+  margin: .4rem auto;
+
+
+  label{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  input{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  span{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+
+.form__button{
+  display: block;
+  margin-left: auto;
+}
+
+.inputs__list{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.mb-1{
+  margin-bottom: 1rem;
+}

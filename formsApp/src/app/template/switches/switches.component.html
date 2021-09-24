@@ -1,0 +1,98 @@
+<div class="container">
+  <h1 class="title">TEMPLATE: Switches.</h1>
+  <div class="separator"></div>
+
+  <form autocomplete="off"
+        #switchesForm = "ngForm">
+
+    <!-- Name  -->
+    <div class="input">
+      <label  class="input__label"
+              for="name">
+            Genero:
+      </label>
+
+
+      <div class="radioContainer">
+
+        <div class="form__group radio__group">
+          <input  type="radio"
+                  id="radio1"
+                  name="radioTest"
+                  value="M"
+                  [(ngModel)]="person.genre"
+                  required>
+          <label for="radio1">
+            Masculino
+          </label>
+        </div>
+
+        <div class="form__group radio__group">
+          <input  type="radio"
+                  id="radio2"
+                  name="radioTest"
+                  value="F"
+                  [(ngModel)]="person.genre"
+                  required>
+          <label for="radio2">Femenino</label>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="mg-l-4 form-check form-switch">
+      <input  class="form-check-input" 
+              type="checkbox"  
+              id="flexSwitchCheckDefault" 
+              name="notifications"
+              [(ngModel)]="person.notifications">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Notificaciones</label>
+    </div>
+
+
+    <div class="mg-l-4 form-check">
+      <input  class="form-check-input" 
+              type="checkbox"
+              id="defaultCheck1"
+              name="TyC"
+              [(ngModel)]="tyc"
+              required>
+
+      <label class="form-check-label" 
+              for="defaultCheck1">
+        Terminos y condiciones
+      </label>
+    </div>
+
+
+    <button type="submit"
+            class="form__button"
+            [disabled]="switchesForm.invalid">
+        Guardar
+    </button>
+  </form>
+
+  <div>
+    <span>
+      Radio
+    </span>
+    <pre>
+      {{switchesForm.value | json }}
+    </pre>
+
+    <span>
+      validez
+    </span>
+    <pre>
+      {{switchesForm.valid}}
+    </pre>
+
+    <span>
+      tyc
+    </span>
+    <pre>
+      {{switchesForm.controls?.TyC?.errors | json}}
+    </pre>
+  </div>
+</div>

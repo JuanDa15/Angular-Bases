@@ -1,0 +1,27 @@
+form{
+  display: flex;
+  flex-flow: column nowrap;
+
+  input, button{
+    margin: .3rem auto;
+    padding: .3rem .6rem;
+    border-radius: .5rem;
+    border: 1px solid #000;
+    outline: none;
+
+    &::placeholder{
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+}
+
+.valido{
+  border: 1px solid rgb(0, 255, 13) !important;
+}
+
+
+.erroneo{
+  border: 1px solid rgb(255,0,0) !important;
+}

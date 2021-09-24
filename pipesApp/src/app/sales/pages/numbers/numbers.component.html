@@ -1,0 +1,22 @@
+<div class="container header text-layout">
+  <h2>Numeric Pipes</h2>
+  <p>Decimal and percentage pipes in Angular</p>
+</div>
+
+<div class="container grid">
+  <div class="col-4">
+    <p-card class="card" header="Total Sales">
+      {{totalSales | number:'1.3-3':'ES-CO'}}
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card class="card" header="Total Sales">
+      {{totalSales + 2000000 | currency:'COP':'code':'':'ES-CO'}}
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card class="card" header="Profits">
+      {{percentage | percent:'1.2-2'}}
+    </p-card>
+  </div>
+</div>

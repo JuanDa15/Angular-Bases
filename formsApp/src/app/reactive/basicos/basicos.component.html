@@ -1,0 +1,89 @@
+<h2>Reactive: Basicos</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <form autocomplete="off"
+          [formGroup]="productsForm"
+          (ngSubmit)="save()">
+
+      <!-- product field -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Product:</label>
+        <div class="col-sm-9">
+
+          <input  type="text"
+                  class="form-control"
+                  placeholder="product name"
+                  formControlName="productName">
+
+          <span class="form-text text-danger"
+                *ngIf="invalidField( 'productName')">
+            min 3 letters
+          </span>
+        </div>
+      </div>
+
+      <!-- Campo de Precio  -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Price:</label>
+        <div class="col-sm-9">
+
+          <input  type="number"
+                  class="form-control"
+                  placeholder="price"
+                  formControlName="price">
+
+          <span class="form-text text-danger"
+                *ngIf="invalidField( 'price')">
+            El precio debe ser mayor de 0
+          </span>
+        </div>
+      </div>
+
+      <!-- Campo de Precio  -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Existences:</label>
+        <div class="col-sm-9">
+
+          <input  type="number"
+                  class="form-control"
+                  placeholder="product existences"
+                  formControlName="existences">
+          <span class="form-text text-danger"
+                *ngIf="invalidField( 'existences')">
+              Las existencias deben ser mayores de 0
+            </span>
+
+        </div>
+      </div>
+
+      <!-- button -->
+      <div class="row">
+        <div class="col">
+          <button type="submit"
+                  class="btn btn-primary float-end">
+                Save
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{productsForm.valid}}</pre>
+
+    <span>Pristine</span>
+    <pre>{{productsForm.pristine}}</pre>
+
+    <span>Touched</span>
+    <pre>{{productsForm.touched}}</pre>
+
+    <span>Value</span>
+    <pre>{{productsForm.value |json}}</pre>
+  </div>
+</div>

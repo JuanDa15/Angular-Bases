@@ -1,0 +1,95 @@
+<h2>Reactive: <small>Dinamicos</small></h2>
+<hr>
+
+<form autocomplete="off"
+      [formGroup]="favoritesForm"
+      (ngSubmit)="save()">
+
+  <!-- Name  -->
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Name</label>
+    <div class="col-sm-9">
+      <input  type="text"
+              class="form-control"
+              placeholder="Name"
+              formControlName="name">
+      <span class="form-text text-danger"
+            *ngIf="invalidField( 'name')">
+        This field is required
+      </span>
+    </div>
+  </div>
+
+
+  <!-- favorite -->
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Add</label>
+    <div class="col-sm-9">
+
+      <div class="input-group">
+
+        <input  type="text"
+                class="form-control"
+                placeholder="add favorite"
+                [formControl]="newFavorite"
+                (keyup.enter)="addFavorite()">
+
+        <button class="btn btn-outline-primary"
+                type="button"
+                (click)="addFavorite()">
+          add
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Favorites list -->
+  <div class="mb-3 row">
+    <label class="col-sm-3 col-form-label">Favorites</label>
+    <div  class="col-sm-9"
+          formArrayName="favorites">
+
+      <div  class="input-group mb-1"
+            *ngFor="let item of favoritesArr.controls;let i = index">
+        <input  class="form-control"
+                [formControlName]="i">
+
+        <button class="btn btn-outline-danger"
+                type="button"
+                (click)="borrar(i)">
+          Delete      
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- button -->
+  <div class="row">
+    <div class="col-sm-12">
+      <button type="submit"
+              class="btn btn-primary float-end">
+        Save
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col">
+    <span>value</span>
+    <pre>{{favoritesForm.value | json}}</pre>
+    <br>
+    <span>valid</span>
+    <pre>{{favoritesForm.valid | json}}</pre>
+    <br>
+    <span>touched</span>
+    <pre>{{favoritesForm.touched | json}}</pre>
+    <br>
+    <span>pristine</span>
+    <pre>{{favoritesForm.pristine | json}}</pre>
+    <span>value</span>
+    <pre>{{newFavorite.value | json}}</pre>
+    <br>
+  </div>
+</div>

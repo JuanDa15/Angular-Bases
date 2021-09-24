@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{heroe.superhero}}</mat-card-title>
+    <mat-card-subtitle>{{heroe.alter_ego}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="heroe | urlImg" [alt]="heroe.superhero">
+  <mat-card-actions>
+    <button mat-flat-button 
+            color="primary"
+            [routerLink]="['/heroes',heroe.id]"
+            >See more...</button>
+    <button mat-stroked-button 
+            color="warm"
+            [routerLink]="['/heroes/edit',heroe.id]"
+            >Edit</button>
+  </mat-card-actions>
+</mat-card>  

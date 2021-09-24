@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  grid-template-columns: 165px 1fr;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  margin-left: 4rem;
+}

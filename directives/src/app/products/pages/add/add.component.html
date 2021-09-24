@@ -1,0 +1,35 @@
+<h1>Add product:</h1>
+<hr>
+<form [formGroup]="productForm">
+  <div class="row g-3 align-items-center mb-3">
+    <div class="col-auto">
+      <label class="col-form-label">Name:</label>
+    </div>
+    <div class="col-auto">
+      <input  class="form-control"
+              type="text"
+              formControlName="name">
+    </div>
+
+    <div class="col-auto">
+      <span ErrMsg
+            [color]="color"
+            msg="Required field"
+            ></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary"
+              (click)="changeColor()">
+        Save
+      </button>
+    </div>
+  </div>
+</form>
+
+<h3 class="mt-5">Form</h3>
+
+<pre>value : {{productForm.value | json}}</pre>
+<pre>valid : {{productForm.valid | json}}</pre>

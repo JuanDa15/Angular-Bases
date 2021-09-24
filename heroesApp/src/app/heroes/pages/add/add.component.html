@@ -1,0 +1,98 @@
+<h1> {{tittle}}<small> {{hero.superhero}} </small></h1>
+
+<div  fxLayout="row"
+      fxLayout.xs="column"
+      fxLayoutGap="40px">
+  <div  fxFlex="50"
+        fxFlex.sm="100"
+        fxLayout="column">
+    
+      <div  fxLayout="row" 
+            fxLayoutGap="1.5rem"
+            fxLayout.xs="column"
+            fxLayoutGap.xs="0">
+
+        <mat-form-field appearance="fill"
+                        fxFlex="100">
+          <mat-label>Super Hero</mat-label>
+          <input  matInput
+                  type="text"
+                  required
+                  [(ngModel)]="hero.superhero">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill"
+                        fxFlex="100">
+          <mat-label>Alter Ego</mat-label>
+          <input  matInput
+                  type="text"
+                  required
+                  [(ngModel)]="hero.alter_ego">
+        </mat-form-field>
+
+      </div>
+
+    <mat-form-field appearance="fill"
+                    fxFlex="100">
+      <mat-label>First Appearance</mat-label>
+      <input  matInput
+              type="text"
+              required
+              [(ngModel)]="hero.first_appearance">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill"
+                    fxFlex="100">
+      <mat-label>Characters</mat-label>
+      <input  matInput
+              type="text"
+              required
+              [(ngModel)]="hero.characters">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" fxFlex="100">
+      <mat-label>Creator</mat-label>
+      <mat-select disabled="false" [(ngModel)]="hero.publisher" required>
+        <mat-option [value]="publisher" *ngFor="let publisher of publishers" >{{publisher}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill"
+                    fxFlex="100">
+      <mat-label>URL</mat-label>
+      <input  matInput
+              type="url"
+              [(ngModel)]="hero.alt_img"
+              required>
+    </mat-form-field>
+
+    <br>
+
+    <div fxFlex="row">
+
+      <button fxFlex="auto"
+              mat-flat-button
+              color="primary"
+              (click)="saveHero()">
+        <mat-icon mat-list-icon>edit</mat-icon> 
+        Save
+      </button>
+
+      <button fxFlex="auto"
+              *ngIf="hero.id"
+              mat-flat-button
+              color="accent"
+              (click)="deleteHero()">
+        <mat-icon mat-list-icon>delete forever</mat-icon> 
+        Delete
+      </button>
+    </div>
+
+  </div>
+  <div  fxFlex="50"
+        fxFlex.xs="100"
+        fxLayoutAlign="center">
+    
+    <img mat-card-image [src]="hero | urlImg" alt="no image">
+  </div>
+</div>

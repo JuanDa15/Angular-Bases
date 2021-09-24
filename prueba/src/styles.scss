@@ -1,0 +1,68 @@
+$decorator1 : rgb(1, 132, 255);
+
+*{
+  font-family: 'Montserrat', sans-serif,Helvetica, sans-serif,  Arial;
+  font-weight: 200;
+  box-sizing: border-box;
+  background-color: rgb(243, 243, 243);
+  margin: 0;
+}
+
+input{
+  border: none;
+  outline: none;
+}
+
+label,button{
+  text-transform: capitalize;
+}
+
+@mixin box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin inputEdited {
+  height: 40px;
+  padding: .4rem .8rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin labelEdited{
+  position: absolute;
+  background-color: inherit;
+  top: 12px;
+  transition: ease .5s;
+  cursor: text;
+  color: #999;
+  left: 2.52rem;
+  text-transform: capitalize;
+}
+
+@mixin labelAnimation{
+  top: -.5rem;
+  font-size: .9rem;
+  background-color: #fff;
+  color: $decorator1;
+  padding: 0 .3rem;
+}
+
+@mixin buttonStyle{
+  border: 1px solid #666;
+  background-color: $decorator1;
+  color: #fff;
+  padding: .86rem 1.6rem;
+  border-radius: .4rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  filter: drop-shadow(0px 3px 7px #666);
+
+  &:hover{
+    background-color: rgb(9, 51, 100);
+    color: #fff;
+    transition: color 300ms ease-out,background-color 300ms ease-in;
+  }
+}

@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm">
+  <div class="form__block">
+    <input type="text" id="correo" formControlName="correo" class="form__input" autocomplete="off" placeholder=" "
+    [ngClass]="{'error':loginForm.get('correo')?.touched && loginForm.get('correo')?.invalid}">
+    <label class="form__label" for="correo">correo </label>
+  </div>
+  <div class="form__error" *ngIf="(loginForm.get('correo')?.touched) && (loginForm.get('correo')?.invalid)">
+    <span>Este campo es obligatorio o no es un correo</span>
+  </div>
+  <div class="form__block">
+    <input type="text" id="contrasena" formControlName="clave" class="form__input" autocomplete="off" placeholder=" ">
+    <label class="form__label" for="contrasena">contraseña</label>
+  </div>
+  <button class="form__button" type="submit" [disabled]="!loginForm.valid" (click)="logIn(loginForm.value)">Ingresar</button>
+</form>

@@ -1,0 +1,102 @@
+<div class="header">
+  <button class="back" routerLink="" routerLinkActive="router-link-active" ><i class="fas fa-chevron-left"></i></button>
+  <h1 class="tittle">Registro</h1>
+</div>
+<form [formGroup]="registerForm" class="form">
+  <div class="form__block">
+    <input type="text" id="nombre" formControlName="nombre" class="form__input" placeholder=" "
+    [ngClass]="{'error':registerForm.get('nombre')?.touched && registerForm.get('nombre')?.invalid}" pattern="[a-zA-Z ]*">
+    <label for="nombre" class="form__label">nombre</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('nombre')?.touched) && (registerForm.get('nombre')?.invalid)">
+    <span>Este campo es obligatorio o contiene números</span>
+  </div>
+  <div class="form__block">
+    <input type="text" id="apellido" formControlName="apellido" class="form__input" placeholder=" " 
+    [ngClass]="{'error':registerForm.get('apellido')?.touched && registerForm.get('apellido')?.invalid}" pattern="[a-zA-Z ]*">
+    <label for="apellido" class="form__label">apellido</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('apellido')?.touched) && (registerForm.get('apellido')?.invalid)">
+    <span>Este campo es obligatorio o contiene números</span>
+  </div>
+  <div class="form__block">
+    <input type="email" placeholder=" " id="correo" formControlName="correo" class="form__input"
+    [ngClass]="{'error':registerForm.get('correo')?.touched && registerForm.get('correo')?.invalid}">
+    <label for="correo" class="form__label">correo</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('correo')?.touched) && (registerForm.get('correo')?.invalid)">
+    <span>Este campo es obligatorio o no es un correo</span>
+  </div>
+  <div class="form__block">
+    <input type="text" id="id" formControlName="id" class="form__input" class="form__input" placeholder=" "
+    [ngClass]="{'error':registerForm.get('id')?.touched && registerForm.get('id')?.invalid}">
+    <label for="id" class="form__label">cédula</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('id')?.touched) && (registerForm.get('id')?.invalid)">
+    <span>Este campo es obligatorio o tiene menos de 7 o más de 10 caracteres</span>
+  </div>
+  <div class="form__block">
+    <input type="text" id="telefono1" formControlName="telefono1" class="form__input" placeholder=" " pattern="^[3][0-9]{9}$|^[3][0-9]{6}$" [ngClass]="{'error':registerForm.get('telefono1')?.touched && registerForm.get('telefono1')?.invalid}">
+    <label for="telefono1" class="form__label">teléfono</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('telefono1')?.touched) && (registerForm.get('telefono1')?.invalid)">
+    <span>Este campo es obligatorio o no es un número de telefono valido</span>
+  </div>
+  <div class="form__block">
+    <input type="text" id="telefono2" formControlName="telefono2" class="form__input" placeholder=" " pattern="^[3][0-9]{9}$|^[3][0-9]{6}$" [ngClass]="{'error':registerForm.get('telefono2')?.touched && registerForm.get('telefono2')?.invalid}">
+    <label for="telefono2" class="form__label">teléfono opcional</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('telefono2')?.touched) && (registerForm.get('telefono2')?.invalid)">
+    <span>Este campo es obligatorio o no es un número de telefono valido</span>
+  </div>
+  <span class="radialLabel">Seleccione su genero: </span>
+  <div class="form__block radial">
+    <div class="form__block--option">
+      <label for="masculino">masculino</label>
+      <input type="radio" name="genero" id="masculino" value="masculino" formControlName="genero">
+    </div>
+    <div class="form__block--option">
+      <label for="femenino">femenino</label>
+      <input type="radio" name="genero" id="femenino" value="femenino" formControlName="genero">
+    </div>
+  </div>
+  <div class="form__block">
+    <input type="number" id="edad" formControlName="edad" class="form__input" placeholder=" "
+    [ngClass]="{'error':registerForm.get('edad')?.touched && registerForm.get('edad')?.invalid}" pattern="^[1-9][0-9]{2}$">
+    <label for="edad" class="form__label">edad</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('edad')?.touched) && (registerForm.get('edad')?.invalid)">
+    <span>Este campo es obligatorio o tiene más de 3 digítos</span>
+  </div>
+  <div class="form__block">
+    <input type="text" id="direccion" formControlName="direccion" class="form__input" placeholder=" "
+    [ngClass]="{'error':registerForm.get('direccion')?.touched && registerForm.get('direccion')?.invalid}">
+    <label for="direccion" class="form__label">direccion</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('direccion')?.touched) && (registerForm.get('direccion')?.invalid)">
+    <span>Este campo es obligatorio o tiene más de 50 caracteres</span>
+  </div>
+  <div class="form__block select">
+    <label for="preferencias">Seleccione su prefenrencia: (obligatorio)</label>
+    <select name="preferencias" id="preferencias" formControlName="preferencias">
+      <option value="accion">accion</option>
+      <option value="romantica">romantica</option>
+      <option value="infantil">infantil</option>
+    </select>
+  </div>
+  <div class="form__block">
+    <input type="text" id="clave1" formControlName="clave1" class="form__input" placeholder=" ">
+    <label for="clave1" class="form__label">contraseña</label>
+  </div>
+  <div class="form__block">
+    <input type="text" id="clave2" formControlName="clave2" class="form__input" placeholder=" ">
+    <label for="clave2" class="form__label">verifique su contraseña</label>
+  </div>
+  <div class="form__error" *ngIf="(registerForm.get('clave1')?.value != registerForm.get('clave2')?.value) && registerForm.get('clave2')?.touched">
+    <span>Las contraseñas no coinciden</span>
+  </div>
+  <div class="form__button">
+    <button [disabled]="(!registerForm.valid) || registerForm.get('clave1')?.value != registerForm.get('clave2')?.value"
+    (click)="signUp(registerForm.value)">registrarme</button>
+  </div>
+</form>

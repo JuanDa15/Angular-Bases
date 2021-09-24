@@ -1,0 +1,34 @@
+<aside>
+  <h2 class="title mt-2">Template</h2>
+  <div class="separator"></div>
+  <ul class="keypad">
+    <li *ngFor="let link of templateLinks"
+        class="link"
+        [routerLink]="link.link"
+        routerLinkActive="active">
+        {{link.title}}
+    </li>
+  </ul>
+  
+  <h2 class="title">Reactive</h2>
+  <div class="separator"></div>
+  <ul class="keypad">
+    <li *ngFor="let link of reactiveLinks"
+        class="link"
+        [routerLink]="link.link"
+        routerLinkActive="active">
+        {{link.title}}
+    </li>
+  </ul>
+
+  <h2 class="title">Validaciones</h2>
+  <div class="separator"></div>
+  <ul class="keypad">
+    <li *ngFor="let link of authMenu"
+        class="link"
+        [routerLink]="link.link"
+        routerLinkActive="active">
+        {{link.title}}
+    </li>
+  </ul>
+</aside>

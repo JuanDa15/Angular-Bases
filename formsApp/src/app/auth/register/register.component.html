@@ -1,0 +1,126 @@
+<h2>Validaciones Reactivas</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+    <form autocomplete="off"
+          [formGroup]="registerForm"
+          (ngSubmit)="guardar()">
+
+      <!-- Name -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+          <input  type="text"
+                  class="form-control"
+                  placeholder="nombre de usuario"
+                  formControlName="nombre">
+          <span class="form-text text-danger"
+                *ngIf="campoNoValido('nombre')"> 
+                Debe de ser en formato de nombre y apellido
+          </span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  formControlName="email">
+          <span class="form-text text-danger"
+                *ngIf="campoNoValido( 'email' )">
+                {{emailErrorMsg}}
+          </span>
+        </div>
+      </div>
+
+      <!-- Username -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Username</label>
+        <div class="col-sm-9">
+          <input  type="text"
+                  class="form-control"
+                  placeholder="Nombre de usuario"
+                  formControlName="username">
+          <span class="form-text text-danger"
+                *ngIf="campoNoValido('username')"> 
+              El username no puede ser xd
+          </span>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input  type="password"
+                  class="form-control"
+                  placeholder="Contraseña"
+                  formControlName="password">
+          <span class="form-text text-danger"
+                *ngIf="campoNoValido('password')"> 
+                la contraseña debe ser mayor de 6 caracteres
+          </span>
+        </div>
+      </div>
+
+      <!-- Password 2-->
+      <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Confirm Password</label>
+        <div class="col-sm-9">
+          <input  type="password"
+                  class="form-control"
+                  placeholder="Confirmar Contraseña"
+                  formControlName="password2">
+          <span class="form-text text-danger"
+                *ngIf="campoNoValido('password2')"> 
+                Debe de ser en formato de nombre y apellido
+          </span>
+        </div>
+      </div>  
+    
+      <div class="row">
+        <div class="column">
+          <button class="btn btn-primary float-end"
+                  [disabled]="registerForm.pending">
+            crear
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<span>Form Value</span>
+<pre>{{registerForm.value | json}}</pre>
+
+<span>Form Status</span>
+<pre>{{registerForm.controls.email.status | json}}</pre>
+
+
+
+<span>Form Valid</span>
+<pre>{{registerForm.valid}}</pre>
+
+<span>Form Errors</span>
+<pre>{{registerForm.errors | json}}</pre>
+
+<span>Name errors</span>
+<pre>{{registerForm.controls.nombre.errors |json}}</pre>
+
+<span>email errors</span>
+<pre>{{registerForm.controls.email.errors |json}}</pre>
+
+<span>username errors</span>
+<pre>{{registerForm.controls.username.errors |json}}</pre>
+
+
+<span>contraseña errors</span>
+<pre>{{registerForm.controls.password.errors |json}}</pre>
+
+<span>contraseña 2 errors</span>
+<pre>{{registerForm.controls.password2.errors |json}}</pre>

@@ -1,0 +1,65 @@
+<div class="container header text-layout">
+  <h2>Personalized Pipes</h2>
+</div>
+
+<div class="container grid">
+  <div class="col">
+    <p-fieldset legend="uppercase personalized" [toggleable]="true">
+      <p>
+        {{'hola' | uppercasePersonalized:flag}}
+      </p>
+    </p-fieldset>
+    <div class="mt-1"></div>
+    <p-toolbar>
+      <div class="p-toolbar-group-left"></div>
+      <div class="p-toolbar-group-left">
+          <p-button label="toggle mayus" (click)="change()"></p-button>
+          <p-button label="fly" icon="pi pi-sort" styleClass="p-button-success" (click)="parameter = 'value'"></p-button>
+          <p-button label="by name" icon="pi pi-sort" styleClass="p-button-danger"  (click)="parameter = 'name'"></p-button>
+          <p-button label="by color" icon="pi pi-sort" (click)="parameter = 'color'"></p-button>
+      </div>
+  </p-toolbar>
+  
+  <div class="grid mt-2">
+    <div class="col">
+      <p-table [value]="heros | order:parameter">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>name</th>
+                <th>fly</th>
+                <th>Color</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-hero>
+            <tr>
+                <td>{{hero.name}}</td>
+                <td>{{hero.fly  | boolean |uppercasePersonalized:true}}</td>
+                <td>{{hero.color | colors}}</td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+  <div class="grid mt-2">
+    <div class="col">
+      <p-table [value]="heros">
+        <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+              <th pSortableColumn="fly">value <p-sortIcon field="value"></p-sortIcon></th>
+              <th pSortableColumn="color">color <p-sortIcon field="color"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-hero>
+            <tr>
+                <td>{{hero.name}}</td>
+                <td>{{hero.fly  | boolean |uppercasePersonalized:true}}</td>
+                <td>{{hero.color | colors}}</td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+  </div>

@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+body,html{
+  margin: 0;
+  padding: 0;
+}
+
+$beau_blue: #c1cad6;
+$red_crayole: #FF1053;
+$dark_blue_gray: #6c6ea0;
+$Vivid_sky_blue: #66C7F4;
+$white: #ffffff;
+
+.separator{
+  width: 90%;
+  margin: 0 auto;
+  height: 1px;
+  border-bottom: 1px solid $red_crayole;
+  margin-bottom: 1rem;
+}
+
+.input{
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto 20px;
+  margin: .4rem auto .8rem auto;
+
+  label{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  input{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  span{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+}
+
+.input__label{
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .5rem .6rem .5rem .6rem;
+}
+
+.input__input{
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  border: 1px solid rgb(165, 165, 165);
+
+  &::placeholder{
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: rgb(165, 165, 165);
+  }
+
+  &:focus{
+    outline: none;
+    outline: 2px solid $red_crayole;
+  }
+}
+
+.alert{
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .2rem .4rem;
+  color: rgb(214, 38, 38);
+}
+
+.form__button{
+  border: 1px solid rgb(170, 170, 170);
+  background-color: $red_crayole;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  color: #fff;
+  font-weight: 700;
+  transition: background-color .5s ease-in;
+
+  &:hover{
+    background-color: $dark_blue_gray;
+  }
+
+  &:disabled{
+    background-color: #cf6c88;
+  }
+}
+
+.form__group{
+  display: flex;
+  flex-flow: row nowrap;
+
+  input{
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  button{
+    padding: .5rem 1rem;
+    background-color: $white;
+    border: 1px solid $red_crayole;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    color: $red_crayole;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.radioContainer{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.radio__group{
+
+  label{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: $red_crayole;
+  }
+}
+
+
+.mg-l-4{
+  margin-left: 4rem;
+}

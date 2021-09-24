@@ -1,0 +1,45 @@
+@import '../../../styles';
+
+.loginBox{
+  @include box;
+  background-color: white;
+  padding: 1.5rem 1rem;
+  border-radius: .5rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  filter: drop-shadow(0px 0px 4px #ccc);
+  width: 380px;
+
+  i{
+    font-size: 6rem;
+    background-color: white;
+    margin: 1.5rem .3rem;
+    color: rgb(16, 106, 209);
+  }
+
+  span{
+    color: #666;
+    background-color: inherit;
+    font-size: .8rem;
+
+    a{
+      background-color: inherit;
+      color: $decorator1;
+      font-weight: 900;
+      margin-left: .2rem;
+      cursor: pointer;
+
+      &:hover{
+        color: rgb(9, 51, 100);
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 410px){
+  .loginBox{
+    border: none;
+    filter: none;
+  }
+}

@@ -1,0 +1,28 @@
+.text-layout{
+  color: var(--text-color);
+}
+
+.container{
+  width: 98%;
+  margin: 0 auto;
+}
+
+.header{
+  padding-left:  1rem;
+}
+
+.background{
+  background-color: #ccc;
+}
+
+.card{
+
+  span{
+    display: block;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+}

@@ -1,0 +1,94 @@
+<div class="container">
+  <h1 class="title">TEMPLATE: Básicos.</h1>
+  <div class="separator"></div>
+  <form   (ngSubmit)="submit( testForm )"
+          #testForm="ngForm">
+
+    <div class="input">
+      <label  for="product" 
+              class="input__label">
+            Product:
+      </label>
+      <input  type="text"
+              id="product"
+              class="input__input"
+              placeholder="Product"
+              autocomplete="off"
+              name="product"
+              ngModel
+              required
+              minlength="3">
+      <span class="alert"
+            *ngIf="nameValidator()">
+        *Debe ser de 3 letras*
+      </span>
+    </div>
+
+    <div class="input">
+      <label  for="price"
+              class="input__label">
+            Price:
+      </label>
+      <input  type="number"
+              id="price"
+              placeholder="Price"
+              class="input__input"
+              autocomplete="off"
+              name="price"
+              ngModel
+              required>
+      <span class="alert"
+            *ngIf="validPrice()">
+            *price must be greater than 0*
+      </span>
+    </div>
+
+    <div class="input">
+      <label  for="existences"
+              class="input__label">
+              Existences:
+      </label>
+      <input  type="number"
+              id="existences"
+              class="input__input"
+              placeholder="Existences"
+              autocomplete="off"
+              name="quantity"
+              ngModel
+              required
+              customMin
+              [minimo]="0">
+      <span class="alert">
+            *Este campo es requerido*
+      </span>
+    </div>
+    <button type="submit"
+            class="form__button"
+            [disabled]="testForm.invalid">
+        Guardar
+    </button>
+  </form>
+
+  <div>
+    <div>
+      <span>Valid</span>
+      <pre>{{testForm.valid}}</pre>
+    </div>
+    <div>
+      <span>Pristine</span>
+      <pre>{{testForm.pristine}}</pre>
+    </div>
+    <div>
+      <span>value</span>
+      <pre>{{testForm.value | json}}</pre>
+    </div>
+    <div>
+      <span>touched</span>
+      <pre>{{testForm.touched}}</pre>
+    </div>
+    <div>
+      <span>Custom Directive</span>
+      <pre>{{testForm.controls.quantity?.errors | json}}</pre>
+    </div>
+  </div>
+</div>

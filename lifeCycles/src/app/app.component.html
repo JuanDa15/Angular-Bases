@@ -1,0 +1,14 @@
+<h1 class="mt-1">Ciclos de vida Angular</h1>
+<hr>
+<div class="container">
+  <input type="text" [(ngModel)]="nombree">
+  <pre>{{nombree}}</pre>
+  <button (click)="mostrar = !mostrar">
+    Ocultar
+  </button>
+</div>
+<div class="container">
+  <app-pagina1 *ngIf="mostrar"></app-pagina1>
+  <hr>
+  <app-mostrar-nombre [nombre]="nombree"></app-mostrar-nombre>
+</div>

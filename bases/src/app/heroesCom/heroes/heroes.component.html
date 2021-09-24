@@ -1,0 +1,18 @@
+<div class="caja">
+  <p>Listado heroes</p>
+
+
+  <ul>
+    <li *ngFor="let nombre of nombres;let i = index">{{i}} {{nombre}}</li>
+  </ul>
+
+  <span *ngIf="nombresBorrados.length == 0; else nombreBorradosT">No ha borrado nada</span>
+
+  <ng-template #nombreBorradosT>
+    <li *ngFor="let NB of nombresBorrados">{{NB}}</li>
+  </ng-template>
+
+  <span *ngIf="nombres.length == 0">No puedes borrar mas nombres</span>
+
+  <button (click)="borrarHeroe()">borrar</button>
+</div>

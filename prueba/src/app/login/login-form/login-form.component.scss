@@ -1,0 +1,53 @@
+@import '../../../styles';
+
+form{
+  margin-bottom: 4rem;
+  background-color: white;
+}
+
+.form__block{
+  margin: 1.5rem 0rem .3rem 0;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: inherit
+}
+
+.form__input{
+  @include inputEdited;
+  border-bottom: 1px solid $decorator1;
+  background-color: inherit;
+}
+
+.form__label{
+  @include labelEdited;
+}
+
+.form__input:focus ~ .form__label, .form__input:not(:placeholder-shown).form__input:not(:focus)~ .form__label{
+  @include labelAnimation;
+}
+
+.form__button{
+  @include buttonStyle;
+  font-size: 1.2rem;
+}
+
+.error{
+  border-radius: .5rem;
+  border: 1px solid red;
+}
+
+.form__error{
+  background-color: rgb(224, 144, 144);
+  width: 90%;
+  margin: 0 auto;
+  border-radius: .5rem;
+  padding: .3rem .6rem;
+
+  span{
+    background-color: inherit;
+    color: rgb(122, 48, 48);
+    font-size: .9rem;
+    font-weight: 700;
+  }
+}

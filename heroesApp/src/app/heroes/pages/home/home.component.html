@@ -1,0 +1,55 @@
+<mat-sidenav-container fullscreen hasBackdrop="false">
+  <mat-sidenav #sidenav mode="push">
+
+    <mat-toolbar color="primary">
+      <span>Menu</span>
+    </mat-toolbar>
+
+    <mat-list role="list">
+      <a routerLink="/heroes/list" 
+        mat-list-item 
+        matRipple
+        role="listitem"
+        (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>list</mat-icon>
+        Heroes List
+      </a>
+
+      <a routerLink="/heroes/add" 
+        mat-list-item
+        matRipple
+        role="listitem"
+        (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>add</mat-icon>
+        Add Hero
+      </a>
+
+      <a  routerLink="/heroes/search" 
+          mat-list-item
+          matRipple
+          role="listitem"
+          (click)="sidenav.toggle()">
+          <mat-icon mat-list-icon>search</mat-icon>
+          Search Hero
+      </a>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button color="accent" (click)="sidenav.toggle()" color="secundary">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="spacer"></span>
+
+    <span>{{auth.usuario}}</span>
+
+    <button mat-stroked-button 
+            color="secundary"
+            (click)="onLogout()">Logout</button>
+  </mat-toolbar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

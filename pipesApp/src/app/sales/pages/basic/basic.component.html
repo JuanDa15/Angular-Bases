@@ -1,0 +1,73 @@
+<div class="container header text-layout">
+  <h2>Basic Pipes</h2>
+  <p>Includes pipes in Angular</p>
+</div>
+
+<div class="container grid">
+  <div class="col-4">
+    <p-card class="card" header="uppercase"
+            [subheader]="lowerName">
+      <span>Result: </span>
+      {{lowerName | uppercase}}
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card class="card" header="lowercase"
+            [subheader]="upperName">
+      <span>Result: </span>
+      {{upperName | lowercase}}
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card class="card" header="titlecase"
+            [subheader]="titleName">
+      <span>Result: </span>
+      {{titleName | titlecase}}
+    </p-card>
+  </div>
+</div>
+
+<div class="container header text-layout">
+  <h2>Date | Pipe</h2>
+  <p>Pipe to manage dates</p>
+</div>
+<div class="container grid">
+  <p-card class="col-6">
+    <ul>
+      <li>Date</li>
+      <li>Date | date</li>
+      <li>Date | date: 'short'</li>
+      <li>Date | date: 'fullDate'</li>
+      <li>Date | date: 'fullTime'</li>
+      <li>Date | date: 'yyy MMMM EEEE'</li>
+    </ul>
+
+    <hr>
+
+    <ul>
+      <li>Date | date:'long':'GMT-7'</li>
+      <li>Date | date:'long':'GMT-6'</li>
+      <li>Date | date:'long':'':'en'</li>
+      <li>Date | date:'long':'':'fr'</li>
+    </ul>
+  </p-card>
+  <p-card class="col-6">
+    <ul>
+      <li>{{date}}</li>
+      <li>{{date | date}}</li>
+      <li>{{date | date:'short'}}</li>
+      <li>{{date | date:'fullDate'}}</li>
+      <li>{{date | date:'fullTime'}}</li>
+      <li>{{date | date:'yyy MMMM EEEE'}}</li>
+    </ul>
+
+    <hr>
+
+    <ul>
+      <li>{{date | date:'long':'GMT-7'}}</li>
+      <li>{{date | date:'long':'GMT-6'}}</li>
+      <li>{{date | date:'long':'':'en'}}</li>
+      <li>{{date | date:'long':'':'fr'}}</li>
+    </ul>
+  </p-card>
+</div>

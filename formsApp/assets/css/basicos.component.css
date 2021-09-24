@@ -1,0 +1,173 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.separator {
+  width: 90%;
+  margin: 0 auto;
+  height: 1px;
+  border-bottom: 1px solid #FF1053;
+  margin-bottom: 1rem;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto 20px;
+  margin: .4rem auto .8rem auto;
+}
+
+.input label {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.input input {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.input span {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.input__label {
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: .5rem .6rem .5rem .6rem;
+}
+
+.input__input {
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  border: 1px solid #a5a5a5;
+}
+
+.input__input::placeholder {
+  font-weight: 700;
+  letter-spacing: .5px;
+  color: #a5a5a5;
+}
+
+.input__input:focus {
+  outline: none;
+  outline: 2px solid #FF1053;
+}
+
+.alert {
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .2rem .4rem;
+  color: #d62626;
+}
+
+.form__button {
+  border: 1px solid #aaaaaa;
+  background-color: #FF1053;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  color: #fff;
+  font-weight: 700;
+  transition: background-color .5s ease-in;
+}
+
+.form__button:hover {
+  background-color: #6c6ea0;
+}
+
+.form__button:disabled {
+  background-color: #cf6c88;
+}
+
+.form__group {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.form__group input {
+  width: 100%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form__group button {
+  padding: .5rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #FF1053;
+  border-top-right-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  color: #FF1053;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.radioContainer {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.radio__group label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #FF1053;
+}
+
+.mg-l-4 {
+  margin-left: 4rem;
+}
+
+.container {
+  padding: .3rem;
+}
+
+.title {
+  margin: 0;
+  padding: 1.2rem .6rem 0 .6rem;
+}
+
+.separator {
+  width: 91%;
+  margin: 0 .6rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  width: 90%;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto 20px;
+  margin: .4rem auto;
+}
+
+.input label {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.input input {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.input span {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.form__button {
+  display: block;
+  margin-left: auto;
+}

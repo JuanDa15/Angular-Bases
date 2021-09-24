@@ -1,0 +1,72 @@
+@import '.././../../styles.scss';
+
+
+.background{
+  background-image: url('../../../assets/img/registerImg.jpg');
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-attachment: fixed;
+  overflow:hidden;
+
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000d;
+  }
+  
+}
+
+.register__box{
+  @include box;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 760px;
+  border: 1px solid #ccc;
+  border-radius: .5rem;
+  text-align: center;
+  background-color:#fff;
+  height: 840px;
+  overflow-y:auto ;
+}
+
+.form__container{
+  margin: .8rem .2rem .8rem 1.6rem;
+  background-color: #fff;
+  overflow-y:auto;
+}
+
+
+@media screen and (max-width: 800px){
+  .register__box{
+    width: 100%;
+    height: auto;
+    transform: none;
+    top: 0;
+    left: 0;
+
+    img{
+      width: 0;
+      display: none;
+    }
+  }
+
+  .form__container{
+    width: 100%;
+    overflow-y: hidden;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .register__box{
+    width: 100%;
+    transform: none;
+    top: 0;
+    left: 0;
+    border: none;
+    height: 100vh;
+  }
+}
