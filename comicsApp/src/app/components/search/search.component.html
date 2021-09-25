@@ -1,0 +1,15 @@
+<h1 class="mt-4">Search Results: <small>{{value}}</small></h1>
+<hr>
+
+<app-heroes-grid *ngIf="heroes.length != 0;else notResults" [heroes]="heroes"></app-heroes-grid>
+
+<ng-template #notResults >
+  <div class="alert alert-info rounded d-flex justify-content-center" style="--bs-bg-opacity: .2;">
+    <p class="display-5">Not found results for <i><b>'{{value}}'</b></i></p>
+  </div>
+</ng-template>
+
+
+
+
+

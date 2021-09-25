@@ -1,0 +1,11 @@
+<h1 class="card-title">{{heroe.nombre |uppercase}} <small class="card-text">{{heroe.aparicion |date}}</small></h1>
+<hr>
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <img [src]="heroe.img" [alt]="heroe.nombre">
+  </div>
+  <div class="col-md-6 col-sm-12 mt-4 ">
+    <p class="card-text">{{heroe.bio}}</p>
+    <p class="card-text">{{heroe.casa | i18nSelect:casa}}</p>
+  </div>
+</div>
