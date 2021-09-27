@@ -13,6 +13,7 @@ import { uppercasePipe } from './pipes/uppercase.pipe';
 import { BooleanPipe } from './pipes/boolean.pipe';
 import { ColorsPipe } from './pipes/colors.pipe';
 import { OrderPipe } from './pipes/order.pipe';
+import { SafeDOMPipe } from './pipes/safe-dom.pipe';
 
 
 
@@ -26,7 +27,8 @@ import { OrderPipe } from './pipes/order.pipe';
     uppercasePipe,
     BooleanPipe,
     ColorsPipe,
-    OrderPipe
+    OrderPipe,
+    SafeDOMPipe
   ],
   imports: [
     CommonModule,

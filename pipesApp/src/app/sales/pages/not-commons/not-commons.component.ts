@@ -22,6 +22,7 @@ export class NotCommonsComponent implements OnInit {
   nombre:string = '';
   genero:string = '';
   position: number = 0;
+  url:string = 'https://www.youtube.com/embed/4GchlC06ca0';
 
   mapping = {
     'masculino' : 'invitarlo',
